@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html> <!--THIS THE BOOTSTRAB TEMPLATE-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--TO COLLAPSE THE CODE CTRL+M+M-->
+    <!--we took the nav bar view in new partial view file now we need to render it here -->
+    @Html.Partial("_NavBar")
+    <div class="container body-content">
+        <!--PARTIAL VIEW IS SMALL VIEW THAT WE CAN USE IN DIFFERNT VIEWS PAGES LIKE SAME HEADER AND FOOTER -->
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - vidly</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

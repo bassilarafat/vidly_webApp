@@ -1,0 +1,25 @@
+﻿@model vidly.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- how to render a list if customers using RAZOR  VIEW -->
+@if (Model.Customers.Count == 0)
+{
+    <p>this Movie is not rented yet </p> //we can use instead of <p> <text> razor can understand
+}
+else
+{
+   
+    <p>Customers</p>
+        <ul>
+
+            @foreach (var customer in Model.Customers)
+            {
+                <li>@customer.Name</li>
+            }
+        </ul>
+
+        }
+

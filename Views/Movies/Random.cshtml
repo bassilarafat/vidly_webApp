@@ -1,0 +1,20 @@
+﻿@model vidly.ViewModels.RandomMovieViewModel
+@{
+    //two prop
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+    this is a COMMENT IN 
+    MULTIPLE LINE
+    
+*@
+<!--add a class to view if one movie is rented by more than 5 name it popular -->
+@{ 
+    var className =Model.Customers.Count > 1 ? "popular" : null; 
+}
+
+<!--render our name of our movie using c#--> 
+<h2 class="@className">@Model.Movie.Name</h2>
+
